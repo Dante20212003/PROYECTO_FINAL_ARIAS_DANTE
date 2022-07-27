@@ -105,7 +105,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(461, 872);
+            this.panel1.Size = new System.Drawing.Size(461, 833);
             this.panel1.TabIndex = 1;
             // 
             // errorSinopsis
@@ -314,7 +314,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_cancel_48;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(271, 770);
+            this.button1.Location = new System.Drawing.Point(271, 731);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 72);
             this.button1.TabIndex = 39;
@@ -330,7 +330,7 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSave.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_save_48;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.Location = new System.Drawing.Point(86, 770);
+            this.btnSave.Location = new System.Drawing.Point(86, 731);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(150, 72);
             this.btnSave.TabIndex = 38;
@@ -465,9 +465,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(485, 896);
+            this.ClientSize = new System.Drawing.Size(485, 857);
             this.Controls.Add(this.panel1);
             this.Name = "FormularioPelicula";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Formulario Pelicula";
             this.Load += new System.EventHandler(this.FormularioPelicula_Load);

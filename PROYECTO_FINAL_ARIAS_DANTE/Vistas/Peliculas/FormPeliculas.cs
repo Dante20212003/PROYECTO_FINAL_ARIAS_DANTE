@@ -35,24 +35,6 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Peliculas
           
         }
 
-        void listarPeliculas()
-        {
-            dataGridPeliculas.Rows.Clear();
-
-            foreach (Pelicula item in ListaPeliculas.getPeliculas())
-            {
-                dataGridPeliculas.Rows.Add(item.Codigo,
-                                       item.Nombre,
-                                       item.Genero,
-                                       item.Clasificacion,
-                                       item.Duracion + " min",
-                                       item.Estreno,
-                                       item.Director,
-                                       item.Sinopsis,
-                                       Image.FromFile(item.Imagen));
-            }
-        }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dataGridPeliculas.RowCount > 0)
@@ -106,6 +88,24 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Peliculas
             dataGridPeliculas.Rows.Clear();
 
             foreach (Pelicula item in resultados)
+            {
+                dataGridPeliculas.Rows.Add(item.Codigo,
+                                       item.Nombre,
+                                       item.Genero,
+                                       item.Clasificacion,
+                                       item.Duracion + " min",
+                                       item.Estreno,
+                                       item.Director,
+                                       item.Sinopsis,
+                                       Image.FromFile(item.Imagen));
+            }
+        }
+
+        void listarPeliculas()
+        {
+            dataGridPeliculas.Rows.Clear();
+
+            foreach (Pelicula item in ListaPeliculas.getPeliculas())
             {
                 dataGridPeliculas.Rows.Add(item.Codigo,
                                        item.Nombre,

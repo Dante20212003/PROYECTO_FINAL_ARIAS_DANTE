@@ -59,6 +59,54 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Clientes
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            bool check = true;
+
+            if (!validateCi()) check = false;
+            if (!validateNombre()) check = false;
+            if (!validateEdad()) check = false;
+            if (!validateTelefono()) check = false;
+            if (!validateCorreo()) check = false;
+            if (!validateDireccion()) check = false;
+
+
+            if (check)
+            {
+                string message = "";
+
+                Cliente cliente = new Cliente();
+                cliente.Ci = inpCi.Text;
+                cliente.Nombre = inpNombre.Text;
+                cliente.Edad = int.Parse(inpEdad.Text);
+                cliente.Telefono = inpTelefono.Text;
+                cliente.Correo = inpCorreo.Text;
+                cliente.Direccion = inpDireccion.Text;
+
+                if (radioHombre.Checked) cliente.Sexo = "Hombre";
+                else cliente.Sexo = "Mujer";
+
+                if (ci.Length > 0)
+                {
+                    FormClientes.ListaClientes.editar(cliente_edit, cliente);
+                    message = $"Cliente con CI: {cliente.Ci} actualizado con éxito";
+                }
+                else
+                {
+                    FormClientes.ListaClientes.agregar(cliente);
+                    message = $"Cliente con CI: {cliente.Ci} agregado con éxito";
+                }
+
+                MenuPrincipal.ShowMessage(message, "Bien", "info");
+
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                SystemSounds.Exclamation.Play();
+            }
+        }
+
         private void inpCi_TextChanged(object sender, EventArgs e)
         {
             validateCi();
@@ -240,52 +288,5 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Clientes
             return false;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            bool check = true;
-
-            if (!validateCi()) check = false;
-            if (!validateNombre()) check = false;
-            if (!validateEdad()) check = false;
-            if (!validateTelefono()) check = false;
-            if (!validateCorreo()) check = false;
-            if (!validateDireccion()) check = false;
-
-
-            if (check)
-            {
-                string message = "";
-
-                Cliente cliente = new Cliente();
-                cliente.Ci = inpCi.Text;
-                cliente.Nombre = inpNombre.Text;
-                cliente.Edad = int.Parse(inpEdad.Text);
-                cliente.Telefono = inpTelefono.Text;
-                cliente.Correo = inpCorreo.Text;
-                cliente.Direccion = inpDireccion.Text;
-
-                if (radioHombre.Checked) cliente.Sexo = "Hombre";
-                else cliente.Sexo = "Mujer";
-
-                if (ci.Length > 0)
-                {
-                    FormClientes.ListaClientes.editar(cliente_edit, cliente);
-                    message = $"Cliente con CI: {cliente.Ci} actualizado con éxito";
-                }
-                else
-                {
-                    FormClientes.ListaClientes.agregar(cliente);
-                    message = $"Cliente con CI: {cliente.Ci} agregado con éxito";
-                }
-
-                MenuPrincipal.ShowMessage(message, "Bien", "info");
-
-                this.DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                SystemSounds.Exclamation.Play();
-            }
-        }
     }
 }

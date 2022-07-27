@@ -81,6 +81,140 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Peliculas
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            bool check = true;
+
+            if (!validateCod()) check = false;
+            if (!validateNombre()) check = false;
+            if (!validateGenero()) check = false;
+            if (!validateClasificacion()) check = false;
+            if (!validateDuracion()) check = false;
+            if (!validateEstreno()) check = false;
+            if (!validateDirector()) check = false;
+            if (!validateSinopsis()) check = false;
+
+            if (check)
+            {
+                string path = $"{AppDomain.CurrentDomain.BaseDirectory}img", message = "", nameImage;
+
+                if (!Directory.Exists(path))
+                {
+                    MessageBox.Show("NO EXISTE");
+                    Directory.CreateDirectory(path);
+                }
+
+                Pelicula pelicula = new Pelicula();
+                pelicula.Codigo = inpCodigo.Text;
+                pelicula.Nombre = inpNombre.Text;
+                pelicula.Genero = inpGenero.Text;
+                pelicula.Clasificacion = comboClasificacion.SelectedItem.ToString();
+                pelicula.Duracion = int.Parse(inpDuracion.Text);
+                pelicula.Estreno = datePicker.Value.ToShortDateString();
+                pelicula.Director = inpDirector.Text;
+                pelicula.Sinopsis = inpSinopsis.Text;
+
+                if (imageBox.Image != null)
+                {
+                    if (pelicula_edit != null)
+                    {
+                        if (imageBox.ImageLocation.ToString() != pelicula_edit.Imagen.ToString())
+                        {
+                            saveAndCopyImage(path, pelicula);
+                        }
+                        else
+                        {
+                            pelicula.Imagen = pelicula_edit.Imagen;
+                        }
+                    }
+                    else
+                    {
+                        saveAndCopyImage(path, pelicula);
+                    }
+                }
+                else
+                {
+                    nameImage = "default.jpg";
+                    pelicula.Imagen = $"{path}\\{nameImage}";
+
+                }
+
+                if (cod.Length > 0)
+                {
+                    FormPeliculas.ListaPeliculas.editar(pelicula_edit, pelicula);
+                    message = $"Pelicula con CODIGO: {pelicula.Codigo} actualizado con éxito";
+                }
+                else
+                {
+                    FormPeliculas.ListaPeliculas.agregar(pelicula);
+                    message = $"Pelicula con CODIGO: {pelicula.Codigo} agregado con éxito";
+                }
+
+                MenuPrincipal.ShowMessage(message, "Bien", "info");
+
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                SystemSounds.Exclamation.Play();
+            }
+        }
+
+        void saveAndCopyImage(string path, Pelicula pelicula)
+        {
+            string nameImage = imageBox.ImageLocation.Substring(imageBox.ImageLocation.LastIndexOf('\\') + 1);
+            pelicula.Imagen = $"{path}\\{nameImage}";
+
+            try
+            {
+                File.Copy(imageBox.ImageLocation, $"{path}\\{nameImage}", true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void inpCodigo_TextChanged(object sender, EventArgs e)
+        {
+            validateCod();
+        }
+
+        private void inpNombre_TextChanged(object sender, EventArgs e)
+        {
+            validateNombre();
+        }
+
+        private void inpGenero_TextChanged(object sender, EventArgs e)
+        {
+            validateGenero();
+        }
+
+        private void comboClasificacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            validateClasificacion();
+        }
+
+        private void inpDuracion_TextChanged(object sender, EventArgs e)
+        {
+            validateDuracion();
+        }
+
+        private void datePicker_ValueChanged(object sender, EventArgs e)
+        {
+            validateEstreno();
+        }
+
+        private void inpDirector_TextChanged(object sender, EventArgs e)
+        {
+            validateDirector();
+        }
+
+        private void inpSinopsis_TextChanged(object sender, EventArgs e)
+        {
+            validateSinopsis();
+        }
+
         bool isInt(TextBox textbox)
         {
             Regex noInt = new Regex(@"\D");
@@ -212,129 +346,6 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Peliculas
             }
 
             return false;
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            bool check = true;
-
-            if (!validateCod()) check = false;
-            if (!validateNombre()) check = false;
-            if (!validateGenero()) check = false;
-            if (!validateClasificacion()) check = false;
-            if (!validateDuracion()) check = false;
-            if (!validateEstreno()) check = false;
-            if (!validateDirector()) check = false;
-            if (!validateSinopsis()) check = false;
-
-
-            if (check)
-            {
-                string path = $"{AppDomain.CurrentDomain.BaseDirectory}img", message = "", nameImage;
-
-                if (!Directory.Exists(path))
-                {
-                    MessageBox.Show("NO EXISTE");
-                    Directory.CreateDirectory(path);
-                }
-
-                Pelicula pelicula = new Pelicula();
-                pelicula.Codigo = inpCodigo.Text;
-                pelicula.Nombre = inpNombre.Text;
-                pelicula.Genero = inpGenero.Text;
-                pelicula.Clasificacion = comboClasificacion.SelectedItem.ToString();
-                pelicula.Duracion = int.Parse(inpDuracion.Text);
-                pelicula.Estreno = datePicker.Value.ToShortDateString();
-                pelicula.Director = inpDirector.Text;
-                pelicula.Sinopsis = inpSinopsis.Text;
-
-                if (imageBox.Image != null)
-                {
-                    if (imageBox.ImageLocation.ToString() != pelicula_edit.Imagen.ToString())
-                    {
-                        nameImage = imageBox.ImageLocation.Substring(imageBox.ImageLocation.LastIndexOf('\\') + 1);
-                        pelicula.Imagen = $"{path}\\{nameImage}";
-
-                        try
-                        {
-                            File.Copy(imageBox.ImageLocation, $"{path}\\{nameImage}", true);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                    }
-                    else
-                    {
-                        pelicula.Imagen = pelicula_edit.Imagen;
-                    }
-                }
-                else
-                {
-                    nameImage = "default.jpg";
-                    pelicula.Imagen = $"{path}\\{nameImage}";
-
-                }
-
-                if (cod.Length > 0)
-                {
-                    FormPeliculas.ListaPeliculas.editar(pelicula_edit, pelicula);
-                    message = $"Pelicula con CODIGO: {pelicula.Codigo} actualizado con éxito";
-                }
-                else
-                {
-                    FormPeliculas.ListaPeliculas.agregar(pelicula);
-                    message = $"Pelicula con CODIGO: {pelicula.Codigo} agregado con éxito";
-                }
-
-                MenuPrincipal.ShowMessage(message, "Bien", "info");
-
-                this.DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                SystemSounds.Exclamation.Play();
-            }
-        }
-
-        private void inpCodigo_TextChanged(object sender, EventArgs e)
-        {
-            validateCod();
-        }
-
-        private void inpNombre_TextChanged(object sender, EventArgs e)
-        {
-            validateNombre();
-        }
-
-        private void inpGenero_TextChanged(object sender, EventArgs e)
-        {
-            validateGenero();
-        }
-
-        private void comboClasificacion_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            validateClasificacion();
-        }
-
-        private void inpDuracion_TextChanged(object sender, EventArgs e)
-        {
-            validateDuracion();
-        }
-
-        private void datePicker_ValueChanged(object sender, EventArgs e)
-        {
-            validateEstreno();
-        }
-
-        private void inpDirector_TextChanged(object sender, EventArgs e)
-        {
-            validateDirector();
-        }
-
-        private void inpSinopsis_TextChanged(object sender, EventArgs e)
-        {
-            validateSinopsis();
         }
     }
 }

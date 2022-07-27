@@ -16,6 +16,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Controladores
 
         public PeliculasDAO()
         {
+            ListaPeliculas.Clear();
             cargarTxt();
         }
 
@@ -29,7 +30,6 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Controladores
         public void editar(Pelicula pelicula, Pelicula data)
         {
             ListaPeliculas[ListaPeliculas.IndexOf(pelicula)] = data;
-
             reloadTxt();
         }
 
@@ -38,9 +38,9 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Controladores
             ListaPeliculas.Remove(pelicula);
         }
 
-        public Pelicula getPeliculas(string ci)
+        public Pelicula getPelicula(string nombre)
         {
-            return ListaPeliculas.FirstOrDefault(x => x.Codigo == ci);
+            return ListaPeliculas.FirstOrDefault(x => x.Nombre == nombre);
         }
 
         public List<Pelicula> getPeliculas()

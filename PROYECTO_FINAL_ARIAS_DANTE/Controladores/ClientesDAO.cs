@@ -16,6 +16,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Controladores
 
         public ClientesDAO()
         {
+            ListaClientes.Clear();
             cargarTxt();
         }
 
@@ -23,7 +24,6 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Controladores
         {
             ListaClientes.Add(cliente);
             agregarTxt(cliente);
-
         }
 
         public void editar(Cliente cliente, Cliente data)
@@ -38,9 +38,9 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Controladores
             ListaClientes.Remove(cliente);
         }
 
-        public Cliente getCliente(string ci)
+        public Cliente getCliente(string name)
         {
-            return ListaClientes.FirstOrDefault(x => x.Ci == ci);
+            return ListaClientes.FirstOrDefault(x => x.Nombre == name);
         }
 
         public List<Cliente> getClientes()

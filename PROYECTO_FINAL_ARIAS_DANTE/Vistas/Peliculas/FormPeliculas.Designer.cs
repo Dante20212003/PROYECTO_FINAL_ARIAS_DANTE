@@ -30,11 +30,11 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.inpBuscar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridPeliculas = new System.Windows.Forms.DataGridView();
             this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,16 +55,27 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Controls.Add(this.inpBuscar);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridPeliculas);
             this.panel1.Location = new System.Drawing.Point(15, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1331, 680);
             this.panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(509, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(322, 46);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "LISTA DE PELICULAS";
             // 
             // btnEliminar
             // 
@@ -128,17 +139,6 @@
             this.inpBuscar.TabIndex = 3;
             this.inpBuscar.TextChanged += new System.EventHandler(this.inpBuscar_TextChanged);
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(514, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(322, 46);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "LISTA DE PELICULAS";
-            // 
             // dataGridPeliculas
             // 
             this.dataGridPeliculas.AllowDrop = true;
@@ -177,54 +177,64 @@
             // 
             // CODIGO
             // 
+            this.CODIGO.FillWeight = 73.38409F;
             this.CODIGO.HeaderText = "CÓDIGO";
             this.CODIGO.Name = "CODIGO";
             this.CODIGO.ReadOnly = true;
             // 
             // NOMBRE
             // 
+            this.NOMBRE.FillWeight = 111.2992F;
             this.NOMBRE.HeaderText = "NOMBRE";
             this.NOMBRE.Name = "NOMBRE";
             this.NOMBRE.ReadOnly = true;
             // 
             // GENERO
             // 
+            this.GENERO.FillWeight = 111.2992F;
             this.GENERO.HeaderText = "GENERO";
             this.GENERO.Name = "GENERO";
             this.GENERO.ReadOnly = true;
             // 
             // CLASIFICACION
             // 
+            this.CLASIFICACION.FillWeight = 111.2992F;
             this.CLASIFICACION.HeaderText = "CLASIFICACIÓN";
             this.CLASIFICACION.Name = "CLASIFICACION";
             this.CLASIFICACION.ReadOnly = true;
+            this.CLASIFICACION.ToolTipText = "awd";
             // 
             // DURACION
             // 
+            this.DURACION.FillWeight = 85.72412F;
             this.DURACION.HeaderText = "DURACIÓN";
             this.DURACION.Name = "DURACION";
             this.DURACION.ReadOnly = true;
             // 
             // ESTRENO
             // 
+            this.ESTRENO.FillWeight = 73.09645F;
             this.ESTRENO.HeaderText = "ESTRENO";
             this.ESTRENO.Name = "ESTRENO";
             this.ESTRENO.ReadOnly = true;
             // 
             // DIRECTOR
             // 
+            this.DIRECTOR.FillWeight = 111.2992F;
             this.DIRECTOR.HeaderText = "DIRECTOR";
             this.DIRECTOR.Name = "DIRECTOR";
             this.DIRECTOR.ReadOnly = true;
             // 
             // SINOPSIS
             // 
+            this.SINOPSIS.FillWeight = 111.2992F;
             this.SINOPSIS.HeaderText = "SINOPSIS";
             this.SINOPSIS.Name = "SINOPSIS";
             this.SINOPSIS.ReadOnly = true;
             // 
             // IMAGEN
             // 
+            this.IMAGEN.FillWeight = 111.2992F;
             this.IMAGEN.HeaderText = "IMAGEN";
             this.IMAGEN.Name = "IMAGEN";
             this.IMAGEN.ReadOnly = true;
@@ -240,8 +250,9 @@
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(750, 360);
             this.Name = "FormPeliculas";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormPeliculas";
+            this.Text = "Peliculas";
             this.Load += new System.EventHandler(this.FormPeliculas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -253,12 +264,12 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
         private DataGridView dataGridPeliculas;
         private TextBox inpBuscar;
         private Button btnEliminar;
         private Button btnEditar;
         private Button btnAgregar;
+        private Label label1;
         private DataGridViewTextBoxColumn CODIGO;
         private DataGridViewTextBoxColumn NOMBRE;
         private DataGridViewTextBoxColumn GENERO;

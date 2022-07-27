@@ -103,9 +103,39 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_buy_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-buy-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cancel_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cancel-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_client_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-client-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_config_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-config-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +156,36 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Properties {
         internal static System.Drawing.Bitmap icons8_edit_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-edit-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_eye_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-eye-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_film_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-film-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_print_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-print-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
