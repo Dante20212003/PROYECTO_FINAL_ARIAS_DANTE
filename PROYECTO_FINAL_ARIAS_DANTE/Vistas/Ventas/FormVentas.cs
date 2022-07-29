@@ -29,7 +29,11 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            FormularioVenta fr = new FormularioVenta();
+            //FormularioVenta fr = new FormularioVenta();
+
+            //if (fr.ShowDialog() == DialogResult.OK) listarVentas();
+
+            FormularioVenta_v2 fr = new FormularioVenta_v2();
 
             if (fr.ShowDialog() == DialogResult.OK) listarVentas();
         }
@@ -88,7 +92,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
             {
                 string idSelect = dataGridVentas.CurrentRow.Cells[0].Value.ToString();
 
-                FormularioVenta fr = new FormularioVenta(idSelect);
+                FormularioVenta_v2 fr = new FormularioVenta_v2(idSelect);
 
                 if (fr.ShowDialog() == DialogResult.OK) listarVentas();
             }

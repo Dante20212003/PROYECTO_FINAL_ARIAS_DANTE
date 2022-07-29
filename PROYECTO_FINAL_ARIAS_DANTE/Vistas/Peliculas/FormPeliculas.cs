@@ -10,21 +10,29 @@ using System.Windows.Forms;
 
 using PROYECTO_FINAL_ARIAS_DANTE.Controladores;
 using PROYECTO_FINAL_ARIAS_DANTE.Modelos;
+using PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas;
 
 namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Peliculas
 {
     public partial class FormPeliculas : Form
     {
         public static PeliculasDAO ListaPeliculas = new PeliculasDAO();
+        bool isVenta;
 
-        public FormPeliculas()
+        public FormPeliculas(bool isVenta = false)
         {
+            this.isVenta = isVenta;
             InitializeComponent();
         }
 
         private void FormPeliculas_Load(object sender, EventArgs e)
         {
             listarPeliculas();
+
+            if (isVenta)
+            {
+                dataGridPeliculas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(doubleClickSelect);
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -32,7 +40,15 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Peliculas
             FormularioPelicula fr = new FormularioPelicula();
 
             if (fr.ShowDialog() == DialogResult.OK) listarPeliculas();
-          
+
+        }
+
+        private void doubleClickSelect(object sender, EventArgs e)
+        {
+            string namePeliculaSelect = dataGridPeliculas.CurrentRow.Cells[1].Value.ToString();
+
+            FormularioVenta_v2.peliculaSelect = namePeliculaSelect;
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

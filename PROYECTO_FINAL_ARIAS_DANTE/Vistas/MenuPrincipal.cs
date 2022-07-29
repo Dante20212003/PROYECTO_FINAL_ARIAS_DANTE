@@ -106,6 +106,8 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas
                 button.Size = new System.Drawing.Size(295, 50);
                 button.Font = new Font(button.Font.Name, 14f, FontStyle.Bold);
                 button.Text = "Ver Pelicula";
+                button.FlatStyle = FlatStyle.Flat;
+                button.ForeColor = Color.White ;
                 button.BackColor = Color.SteelBlue;
                 button.Cursor = Cursors.Hand;
                 button.UseVisualStyleBackColor = true;

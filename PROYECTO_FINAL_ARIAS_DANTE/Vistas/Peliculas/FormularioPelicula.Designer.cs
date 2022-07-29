@@ -127,7 +127,7 @@
             this.inpSinopsis.Name = "inpSinopsis";
             this.inpSinopsis.PlaceholderText = "Sinopsis de la Pelicula";
             this.inpSinopsis.Size = new System.Drawing.Size(238, 79);
-            this.inpSinopsis.TabIndex = 51;
+            this.inpSinopsis.TabIndex = 34;
             this.inpSinopsis.TextChanged += new System.EventHandler(this.inpSinopsis_TextChanged);
             // 
             // label10
@@ -186,7 +186,7 @@
             this.btnSelectImage.Location = new System.Drawing.Point(164, 560);
             this.btnSelectImage.Name = "btnSelectImage";
             this.btnSelectImage.Size = new System.Drawing.Size(238, 23);
-            this.btnSelectImage.TabIndex = 34;
+            this.btnSelectImage.TabIndex = 35;
             this.btnSelectImage.Text = "Seleccionar Imagen";
             this.btnSelectImage.UseVisualStyleBackColor = true;
             this.btnSelectImage.Click += new System.EventHandler(this.btnSelectImage_Click);

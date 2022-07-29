@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using PROYECTO_FINAL_ARIAS_DANTE.Controladores;
-using PROYECTO_FINAL_ARIAS_DANTE.Vistas;
+using PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas;
 using PROYECTO_FINAL_ARIAS_DANTE.Modelos;
 using System.Text.RegularExpressions;
 
@@ -18,15 +18,22 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Clientes
     public partial class FormClientes : Form
     {
         public static ClientesDAO ListaClientes = new ClientesDAO();
+        bool isVenta;
 
-        public FormClientes()
+        public FormClientes(bool isVenta = false)
         {
+            this.isVenta = isVenta;
             InitializeComponent();
         }
 
         private void FormClientes_Load(object sender, EventArgs e)
         {
             listarClientes();
+
+            if (isVenta)
+            {
+                dataGridClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(doubleClickSelect);
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -34,6 +41,14 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Clientes
             FormularioCliente fr = new FormularioCliente();
 
             if (fr.ShowDialog() == DialogResult.OK) listarClientes();
+        }
+
+        private void doubleClickSelect(object sender, EventArgs e)
+        {
+            string nameClientSelect = dataGridClientes.CurrentRow.Cells[1].Value.ToString();
+
+            FormularioVenta_v2.clienteSelect = nameClientSelect;
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

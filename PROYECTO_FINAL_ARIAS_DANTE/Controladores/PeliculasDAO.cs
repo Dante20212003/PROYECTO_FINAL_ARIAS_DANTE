@@ -198,7 +198,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Controladores
             pelicula8.Clasificacion = "15+";
             pelicula8.Duracion = 114;
             pelicula8.Estreno = "09/02/2000";
-            pelicula8.Director = "";
+            pelicula8.Director = "Sony Pictures Entertaiment";
             pelicula8.Sinopsis = "En la costa de un pequeño pueblo del Este de los Estados Unidos, un enorme tiburón ataca a varias personas. Por temor a los nefastos efectos que este hecho podría tener sobre el negocio turístico, el alcalde se niega a cerrar las playas y a difundir la noticia. Pero un nuevo ataque del tiburón termina con la vida de un bañista. Cuando el terror se apodera de todos, un veterano cazador de tiburones, un oceanógrafo y el jefe de la policía local se unen para intentar capturar al escualo.";
             pelicula8.Imagen = $"{ruta_base}jaws.jpg";
             agregar(pelicula8);

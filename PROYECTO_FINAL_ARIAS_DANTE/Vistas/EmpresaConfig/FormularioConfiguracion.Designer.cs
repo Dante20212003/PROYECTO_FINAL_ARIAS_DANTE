@@ -126,7 +126,7 @@
             this.comboMoneda.Location = new System.Drawing.Point(140, 199);
             this.comboMoneda.Name = "comboMoneda";
             this.comboMoneda.Size = new System.Drawing.Size(235, 29);
-            this.comboMoneda.TabIndex = 48;
+            this.comboMoneda.TabIndex = 29;
             this.comboMoneda.Text = "--Seleccione una moneda--";
             this.comboMoneda.SelectedIndexChanged += new System.EventHandler(this.comboMoneda_SelectedIndexChanged);
             // 
@@ -138,7 +138,7 @@
             this.inpPais.Name = "inpPais";
             this.inpPais.PlaceholderText = "Pais de la Empresa";
             this.inpPais.Size = new System.Drawing.Size(238, 29);
-            this.inpPais.TabIndex = 47;
+            this.inpPais.TabIndex = 31;
             this.inpPais.TextChanged += new System.EventHandler(this.inpPais_TextChanged);
             // 
             // label8
@@ -160,7 +160,7 @@
             this.inpCiudad.Name = "inpCiudad";
             this.inpCiudad.PlaceholderText = "Cuidad de la Empresa";
             this.inpCiudad.Size = new System.Drawing.Size(238, 29);
-            this.inpCiudad.TabIndex = 45;
+            this.inpCiudad.TabIndex = 32;
             this.inpCiudad.TextChanged += new System.EventHandler(this.inpNitudad_TextChanged);
             // 
             // label7
@@ -270,7 +270,7 @@
             this.inpDireccion.Name = "inpDireccion";
             this.inpDireccion.PlaceholderText = "Direccion de la Empresa";
             this.inpDireccion.Size = new System.Drawing.Size(238, 29);
-            this.inpDireccion.TabIndex = 32;
+            this.inpDireccion.TabIndex = 30;
             this.inpDireccion.TextChanged += new System.EventHandler(this.inpDireccion_TextChanged);
             // 
             // inpCorreo
@@ -281,7 +281,7 @@
             this.inpCorreo.Name = "inpCorreo";
             this.inpCorreo.PlaceholderText = "Correo de la Empresa";
             this.inpCorreo.Size = new System.Drawing.Size(238, 29);
-            this.inpCorreo.TabIndex = 31;
+            this.inpCorreo.TabIndex = 34;
             this.inpCorreo.TextChanged += new System.EventHandler(this.inpCorreo_TextChanged);
             // 
             // inpTelefono
@@ -292,7 +292,7 @@
             this.inpTelefono.Name = "inpTelefono";
             this.inpTelefono.PlaceholderText = "Telefono de la Empresa";
             this.inpTelefono.Size = new System.Drawing.Size(238, 29);
-            this.inpTelefono.TabIndex = 30;
+            this.inpTelefono.TabIndex = 33;
             this.inpTelefono.TextChanged += new System.EventHandler(this.inpTelefono_TextChanged);
             // 
             // inpNombre
