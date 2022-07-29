@@ -76,7 +76,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
                         inpNumeroBoletos.Value = item.Boletos;
                         inpNumeroBoletos.Enabled = false;
 
-                        inpTotal.Text = item.Total.ToString();
+                        inpTotal.Text = "Bs." + item.Total.ToString();
                         inpTotal.Enabled = false;
 
                         datePicker.Value = Convert.ToDateTime(item.Fecha);
@@ -379,7 +379,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
 
             e.Graphics.DrawString($"Numero de Boletos:   {inpNumeroBoletos.Text}", new Font("Arial", 16, FontStyle.Regular), Brushes.Black, new Point(100, 620 + 60));
 
-            e.Graphics.DrawString($"Total:   {inpTotal.Text}", new Font("Arial", 16, FontStyle.Regular), Brushes.Black, new Point(100, 650 + 60));
+            e.Graphics.DrawString($"Total:  Bs. {inpTotal.Text}", new Font("Arial", 16, FontStyle.Regular), Brushes.Black, new Point(100, 650 + 60));
 
 
         }

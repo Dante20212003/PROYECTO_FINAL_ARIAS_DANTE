@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,9 +39,13 @@
             this.gestionarVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRecargar = new System.Windows.Forms.Button();
+            this.titleEmpresa = new System.Windows.Forms.Label();
             this.flowLayout = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -54,7 +59,7 @@
             this.empresaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1464, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -126,6 +131,49 @@
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
             this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.configuracionToolStripMenuItem.Text = "Configuracion";
+            this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel1.Controls.Add(this.btnRecargar);
+            this.panel1.Controls.Add(this.titleEmpresa);
+            this.panel1.Location = new System.Drawing.Point(15, 31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1440, 727);
+            this.panel1.TabIndex = 5;
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRecargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecargar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRecargar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRecargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecargar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnRecargar.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_refresh_48;
+            this.btnRecargar.Location = new System.Drawing.Point(1364, 3);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(73, 53);
+            this.btnRecargar.TabIndex = 7;
+            this.btnRecargar.UseVisualStyleBackColor = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
+            // titleEmpresa
+            // 
+            this.titleEmpresa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.titleEmpresa.AutoSize = true;
+            this.titleEmpresa.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.titleEmpresa.Location = new System.Drawing.Point(564, 5);
+            this.titleEmpresa.Name = "titleEmpresa";
+            this.titleEmpresa.Size = new System.Drawing.Size(313, 46);
+            this.titleEmpresa.TabIndex = 5;
+            this.titleEmpresa.Text = "CINEPOLIS TARIJA";
             // 
             // flowLayout
             // 
@@ -133,30 +181,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayout.AutoScroll = true;
-            this.flowLayout.Location = new System.Drawing.Point(12, 90);
+            this.flowLayout.Location = new System.Drawing.Point(15, 90);
             this.flowLayout.Name = "flowLayout";
-            this.flowLayout.Size = new System.Drawing.Size(776, 348);
-            this.flowLayout.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(241, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(313, 46);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "CINEPOLIS TARIJA";
+            this.flowLayout.Size = new System.Drawing.Size(1440, 668);
+            this.flowLayout.TabIndex = 6;
             // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1464, 761);
             this.Controls.Add(this.flowLayout);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuPrincipal";
@@ -165,6 +202,8 @@
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,7 +220,10 @@
         private ToolStripMenuItem configuracionToolStripMenuItem;
         private ToolStripMenuItem ventasToolStripMenuItem;
         private ToolStripMenuItem gestionarVentasToolStripMenuItem;
+        private Panel panel1;
+        private Label titleEmpresa;
         private FlowLayoutPanel flowLayout;
-        private Label label1;
+        private ToolTip toolTip1;
+        private Button btnRecargar;
     }
 }

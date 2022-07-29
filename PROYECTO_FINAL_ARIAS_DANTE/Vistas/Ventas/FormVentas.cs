@@ -60,7 +60,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
             }
             else
             {
-                MenuPrincipal.ShowMessage("Seleccione una venta para editar", "Alerta", "warn");
+                MenuPrincipal.ShowMessage("Seleccione una venta para eliminar", "Alerta", "warn");
             }
         }
 
@@ -94,7 +94,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
             }
             else
             {
-                MenuPrincipal.ShowMessage("Seleccione un libro para editar", "Alerta", "warn");
+                MenuPrincipal.ShowMessage("Seleccione una venta para ver", "Alerta", "warn");
             }
         }
 

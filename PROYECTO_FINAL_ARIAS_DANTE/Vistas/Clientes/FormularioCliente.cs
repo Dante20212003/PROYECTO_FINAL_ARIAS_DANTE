@@ -19,9 +19,9 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Clientes
         string ci;
         Cliente cliente_edit;
 
-        public FormularioCliente(string ci_ = "")
+        public FormularioCliente(string ci = "")
         {
-            ci = ci_;
+            this.ci = ci;
             InitializeComponent();
         }
 

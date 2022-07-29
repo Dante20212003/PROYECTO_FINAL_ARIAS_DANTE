@@ -13,7 +13,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Controladores
     public class VentasDAO
     {
         private static List<Venta> ListaVentas = new List<Venta>();
-        public static string rutaDbVentas = "E:\\Ventas.txt";
+        public static string rutaDbVentas = MenuPrincipal.rutaDBVentas;
 
         public VentasDAO()
         {

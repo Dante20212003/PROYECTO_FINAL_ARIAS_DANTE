@@ -73,7 +73,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Peliculas
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "(*.bmp;*.png;*.jpg)|*.bmp;*.png;*.jpg";
 
-            MessageBox.Show("Se recomienda utilizar imagenes de 350x500");
+            MessageBox.Show("Se recomienda utilizar imagenes de 350x400px");
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
