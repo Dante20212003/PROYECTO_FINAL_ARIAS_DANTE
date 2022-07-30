@@ -16,6 +16,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
     public partial class FormVentas : Form
     {
         public static VentasDAO ListaVentas = new VentasDAO();
+        Empresa DataEmpresa = MenuPrincipal.EmpresaData.getEmpresa();
 
         public FormVentas()
         {
@@ -68,24 +69,6 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
             }
         }
 
-        void listarVentas()
-        {
-            dataGridVentas.Rows.Clear();
-
-            foreach (Venta item in ListaVentas.getVentas())
-            {
-                dataGridVentas.Rows.Add(item.IdVenta,
-                                       item.Pelicula,
-                                       item.Cliente,
-                                       item.Factura,
-                                       item.Nit,
-                                       item.Boletos,
-                                       "Bs. " + item.PrecioBoleto,
-                                       "Bs. " + item.Total,
-                                       item.Fecha);
-            }
-        }
-
         private void btnVer_Click(object sender, EventArgs e)
         {
             if (dataGridVentas.RowCount > 0)
@@ -119,6 +102,24 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
                                         "Bs. " + item.PrecioBoleto,
                                         "Bs. " + item.Total,
                                         item.Fecha);
+            }
+        }
+
+        void listarVentas()
+        {
+            dataGridVentas.Rows.Clear();
+
+            foreach (Venta item in ListaVentas.getVentas())
+            {
+                dataGridVentas.Rows.Add(item.IdVenta,
+                                       item.Pelicula,
+                                       item.Cliente,
+                                       item.Factura,
+                                       item.Nit,
+                                       item.Boletos,
+                                       DataEmpresa.Moneda + " " + item.PrecioBoleto,
+                                       DataEmpresa.Moneda + " " + item.Total,
+                                       item.Fecha);
             }
         }
     }

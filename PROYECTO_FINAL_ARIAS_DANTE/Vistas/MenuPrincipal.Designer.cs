@@ -32,13 +32,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionarPeliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionarVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRecargar = new System.Windows.Forms.Button();
             this.titleEmpresa = new System.Windows.Forms.Label();
@@ -65,73 +61,43 @@
             // 
             // inicioToolStripMenuItem
             // 
+            this.inicioToolStripMenuItem.Checked = true;
+            this.inicioToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.inicioToolStripMenuItem.Text = "Inicio";
             // 
             // peliculasToolStripMenuItem
             // 
-            this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionarPeliculasToolStripMenuItem});
+            this.peliculasToolStripMenuItem.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_film_48;
             this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
-            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.peliculasToolStripMenuItem.Text = "Peliculas";
-            // 
-            // gestionarPeliculasToolStripMenuItem
-            // 
-            this.gestionarPeliculasToolStripMenuItem.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_film_48;
-            this.gestionarPeliculasToolStripMenuItem.Name = "gestionarPeliculasToolStripMenuItem";
-            this.gestionarPeliculasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.gestionarPeliculasToolStripMenuItem.Text = "Gestionar Peliculas";
-            this.gestionarPeliculasToolStripMenuItem.Click += new System.EventHandler(this.gestionarPeliculasToolStripMenuItem_Click);
+            this.peliculasToolStripMenuItem.Click += new System.EventHandler(this.peliculasToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
-            this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionarClientesToolStripMenuItem});
+            this.clientesToolStripMenuItem.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_client_48;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
-            // 
-            // gestionarClientesToolStripMenuItem
-            // 
-            this.gestionarClientesToolStripMenuItem.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_client_48;
-            this.gestionarClientesToolStripMenuItem.Name = "gestionarClientesToolStripMenuItem";
-            this.gestionarClientesToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.gestionarClientesToolStripMenuItem.Text = "Gestionar Clientes";
-            this.gestionarClientesToolStripMenuItem.Click += new System.EventHandler(this.gestionarClientesToolStripMenuItem_Click);
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
-            this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionarVentasToolStripMenuItem});
+            this.ventasToolStripMenuItem.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_buy_48;
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.ventasToolStripMenuItem.Text = "Ventas";
-            // 
-            // gestionarVentasToolStripMenuItem
-            // 
-            this.gestionarVentasToolStripMenuItem.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_buy_48;
-            this.gestionarVentasToolStripMenuItem.Name = "gestionarVentasToolStripMenuItem";
-            this.gestionarVentasToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.gestionarVentasToolStripMenuItem.Text = "Gestionar Ventas";
-            this.gestionarVentasToolStripMenuItem.Click += new System.EventHandler(this.gestionarVentasToolStripMenuItem_Click);
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // empresaToolStripMenuItem
             // 
-            this.empresaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configuracionToolStripMenuItem});
+            this.empresaToolStripMenuItem.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_config_48;
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
-            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.empresaToolStripMenuItem.Text = "Empresa";
-            // 
-            // configuracionToolStripMenuItem
-            // 
-            this.configuracionToolStripMenuItem.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_config_48;
-            this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.configuracionToolStripMenuItem.Text = "Configuracion";
-            this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(159, 20);
+            this.empresaToolStripMenuItem.Text = "Configuracion Empresa";
+            this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -197,8 +163,9 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuPrincipal";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MenuPrincipal";
+            this.Text = "CINEPOLIS";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -213,13 +180,9 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem inicioToolStripMenuItem;
         private ToolStripMenuItem peliculasToolStripMenuItem;
-        private ToolStripMenuItem gestionarPeliculasToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
-        private ToolStripMenuItem gestionarClientesToolStripMenuItem;
         private ToolStripMenuItem empresaToolStripMenuItem;
-        private ToolStripMenuItem configuracionToolStripMenuItem;
         private ToolStripMenuItem ventasToolStripMenuItem;
-        private ToolStripMenuItem gestionarVentasToolStripMenuItem;
         private Panel panel1;
         private Label titleEmpresa;
         private FlowLayoutPanel flowLayout;

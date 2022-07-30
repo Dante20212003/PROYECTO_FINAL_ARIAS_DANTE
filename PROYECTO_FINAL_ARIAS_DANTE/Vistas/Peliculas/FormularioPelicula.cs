@@ -160,21 +160,6 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Peliculas
             }
         }
 
-        void saveAndCopyImage(string path, Pelicula pelicula)
-        {
-            string nameImage = imageBox.ImageLocation.Substring(imageBox.ImageLocation.LastIndexOf('\\') + 1);
-            pelicula.Imagen = $"{path}\\{nameImage}";
-
-            try
-            {
-                File.Copy(imageBox.ImageLocation, $"{path}\\{nameImage}", true);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void inpCodigo_TextChanged(object sender, EventArgs e)
         {
             validateCod();
@@ -346,6 +331,21 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Peliculas
             }
 
             return false;
+        }
+
+        void saveAndCopyImage(string path, Pelicula pelicula)
+        {
+            string nameImage = imageBox.ImageLocation.Substring(imageBox.ImageLocation.LastIndexOf('\\') + 1);
+            pelicula.Imagen = $"{path}\\{nameImage}";
+
+            try
+            {
+                File.Copy(imageBox.ImageLocation, $"{path}\\{nameImage}", true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

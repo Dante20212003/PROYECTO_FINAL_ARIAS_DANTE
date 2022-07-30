@@ -43,14 +43,6 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Peliculas
 
         }
 
-        private void doubleClickSelect(object sender, EventArgs e)
-        {
-            string namePeliculaSelect = dataGridPeliculas.CurrentRow.Cells[1].Value.ToString();
-
-            FormularioVenta_v2.peliculaSelect = namePeliculaSelect;
-            this.DialogResult = DialogResult.OK;
-        }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dataGridPeliculas.RowCount > 0)
@@ -65,6 +57,14 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Peliculas
             {
                 MenuPrincipal.ShowMessage("Seleccione una pelicula para editar", "Alerta", "warn");
             }
+        }
+
+        private void doubleClickSelect(object sender, EventArgs e)
+        {
+            string namePeliculaSelect = dataGridPeliculas.CurrentRow.Cells[1].Value.ToString();
+
+            FormularioVenta_v2.peliculaSelect = namePeliculaSelect;
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

@@ -29,6 +29,8 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas
         public static string rutaDBVentas = "";
         public static string rutaDBEmpresa = "";
 
+        public static bool Logueado = false;
+
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -45,34 +47,64 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas
 
         }
 
-        private void gestionarPeliculasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void peliculasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPeliculas formPeliculas = new FormPeliculas();
 
-            formPeliculas.Show();
-        }
-
-        private void gestionarClientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormClientes formClientes = new FormClientes();
-
-            formClientes.Show();
-        }
-
-        private void gestionarVentasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormVentas formVentas = new FormVentas();
-
-            formVentas.Show();
-        }
-
-        private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormularioConfiguracion formConfiguracion = new FormularioConfiguracion();
-
-            if (formConfiguracion.ShowDialog() == DialogResult.OK)
+            if (loguearse())
             {
-                
+                FormPeliculas formPeliculas = new FormPeliculas();
+
+                formPeliculas.Show();
+            }
+
+
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (loguearse())
+            {
+                FormClientes formClientes = new FormClientes();
+                formClientes.Show();
+            }
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (loguearse())
+            {
+                FormVentas formVentas = new FormVentas();
+                formVentas.Show();
+            }
+        }
+
+        private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (loguearse())
+            {
+                FormularioConfiguracion formConfiguracion = new FormularioConfiguracion();
+                formConfiguracion.ShowDialog();
+            }
+
+        }
+
+        private bool loguearse()
+        {
+            if (!Logueado)
+            {
+                Login fr = new Login();
+                if (fr.ShowDialog() == DialogResult.OK)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return true;
             }
         }
 
@@ -80,6 +112,16 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas
         {
             listarPeliculas();
             titleEmpresa.Text = $"Cinepolis {EmpresaData.getEmpresa().Nombre}";
+        }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+
+            string cod = button.Name.Substring(button.Name.LastIndexOf(',') + 1);
+
+            ViewPelicula viewPelicula = new ViewPelicula(cod, ListaPeliculas);
+            viewPelicula.ShowDialog();
         }
 
         public void listarPeliculas()
@@ -107,7 +149,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas
                 button.Font = new Font(button.Font.Name, 14f, FontStyle.Bold);
                 button.Text = "Ver Pelicula";
                 button.FlatStyle = FlatStyle.Flat;
-                button.ForeColor = Color.White ;
+                button.ForeColor = Color.White;
                 button.BackColor = Color.SteelBlue;
                 button.Cursor = Cursors.Hand;
                 button.UseVisualStyleBackColor = true;
@@ -125,16 +167,6 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas
 
                 flowLayout.Controls.Add(panel);
             }
-        }
-
-        private void button_Click(object sender, EventArgs e)
-        {
-            Button button = sender as Button;
-
-            string cod = button.Name.Substring(button.Name.LastIndexOf(',') + 1);
-
-            ViewPelicula viewPelicula = new ViewPelicula(cod, ListaPeliculas);
-            viewPelicula.ShowDialog();
         }
 
         void comprobarBasesDeDatos()
@@ -275,6 +307,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas
                 MessageBox.Show(body, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
 
     }
 }

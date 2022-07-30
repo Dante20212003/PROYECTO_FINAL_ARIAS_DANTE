@@ -21,6 +21,20 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.EmpresaConfig
             InitializeComponent();
         }
 
+        private void FormularioConfiguracion_Load_1(object sender, EventArgs e)
+        {
+            var data = MenuPrincipal.EmpresaData.getEmpresa();
+
+            if (data.Nit != null) inpNit.Text = data.Nit;
+            if (data.Nombre != null) inpNombre.Text = data.Nombre;
+            if (data.Moneda != null) comboMoneda.SelectedItem = data.Moneda;
+            if (data.Direccion != null) inpDireccion.Text = data.Direccion;
+            if (data.Pais != null) inpPais.Text = data.Pais;
+            if (data.Ciudad != null) inpCiudad.Text = data.Ciudad;
+            if (data.Telefono != null) inpTelefono.Text = data.Telefono;
+            if (data.Correo != null) inpCorreo.Text = data.Correo;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             bool check = true;
@@ -248,18 +262,5 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.EmpresaConfig
             return true;
         }
 
-        private void FormularioConfiguracion_Load_1(object sender, EventArgs e)
-        {
-            var data = MenuPrincipal.EmpresaData.getEmpresa();
-
-            if (data.Nit != null) inpNit.Text = data.Nit;
-            if (data.Nombre != null) inpNombre.Text = data.Nombre;
-            if (data.Moneda != null) comboMoneda.SelectedItem = data.Moneda;
-            if (data.Direccion != null) inpDireccion.Text = data.Direccion;
-            if (data.Pais != null) inpPais.Text = data.Pais;
-            if (data.Ciudad != null) inpCiudad.Text = data.Ciudad;
-            if (data.Telefono != null) inpTelefono.Text = data.Telefono;
-            if (data.Correo != null) inpCorreo.Text = data.Correo;
-        }
     }
 }

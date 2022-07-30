@@ -126,6 +126,7 @@
             this.inpSinopsis.Multiline = true;
             this.inpSinopsis.Name = "inpSinopsis";
             this.inpSinopsis.PlaceholderText = "Sinopsis de la Pelicula";
+            this.inpSinopsis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.inpSinopsis.Size = new System.Drawing.Size(238, 79);
             this.inpSinopsis.TabIndex = 34;
             this.inpSinopsis.TextChanged += new System.EventHandler(this.inpSinopsis_TextChanged);

@@ -43,14 +43,6 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Clientes
             if (fr.ShowDialog() == DialogResult.OK) listarClientes();
         }
 
-        private void doubleClickSelect(object sender, EventArgs e)
-        {
-            string nameClientSelect = dataGridClientes.CurrentRow.Cells[1].Value.ToString();
-
-            FormularioVenta_v2.clienteSelect = nameClientSelect;
-            this.DialogResult = DialogResult.OK;
-        }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dataGridClientes.RowCount > 0)
@@ -123,6 +115,14 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Clientes
             }
         }
 
+        private void doubleClickSelect(object sender, EventArgs e)
+        {
+            string nameClientSelect = dataGridClientes.CurrentRow.Cells[1].Value.ToString();
+
+            FormularioVenta_v2.clienteSelect = nameClientSelect;
+            this.DialogResult = DialogResult.OK;
+        }
+
         bool isInt(string data)
         {
             Regex noInt = new Regex(@"\D");
@@ -149,5 +149,6 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Clientes
                                        item.Sexo);
             }
         }
+
     }
 }

@@ -20,6 +20,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
 {
     public partial class FormularioVenta_v2 : Form
     {
+        Empresa DataEmpresa = MenuPrincipal.EmpresaData.getEmpresa();
         string id;
 
         public static PeliculasDAO ListaPeliculas = new PeliculasDAO();
@@ -76,7 +77,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
                         inpNumeroBoletos.Value = item.Boletos;
                         inpNumeroBoletos.Enabled = false;
 
-                        inpTotal.Text = "Bs." + item.Total.ToString();
+                        inpTotal.Text = DataEmpresa.Moneda + " " + item.Total.ToString();
                         inpTotal.Enabled = false;
 
                         datePicker.Value = Convert.ToDateTime(item.Fecha);
@@ -309,7 +310,7 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
             }
             else errorPrecio.Text = "";
 
-            inpTotal.Text = "Bs. " + (int.Parse(inpPrecio.Text) * int.Parse(inpNumeroBoletos.Value.ToString())).ToString();
+            inpTotal.Text = DataEmpresa.Moneda + " " + (int.Parse(inpPrecio.Text) * int.Parse(inpNumeroBoletos.Value.ToString())).ToString();
 
             return true;
         }
