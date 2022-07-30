@@ -213,6 +213,16 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_refresh_25 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-refresh-25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_refresh_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-refresh-48", resourceCulture);

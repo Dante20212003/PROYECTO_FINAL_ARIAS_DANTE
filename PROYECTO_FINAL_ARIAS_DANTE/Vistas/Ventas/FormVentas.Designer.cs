@@ -30,6 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnVer = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -56,6 +59,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.btnVer);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnEliminar);
@@ -68,6 +74,38 @@
             this.panel1.Size = new System.Drawing.Size(1346, 692);
             this.panel1.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_refresh_25;
+            this.button1.Location = new System.Drawing.Point(1310, 66);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(35, 31);
+            this.button1.TabIndex = 15;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1104, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 15);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Filtrar por fecha:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker1.Location = new System.Drawing.Point(1104, 67);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 29);
+            this.dateTimePicker1.TabIndex = 13;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
             // btnVer
             // 
             this.btnVer.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -76,7 +114,7 @@
             this.btnVer.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnVer.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_eye_48;
             this.btnVer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVer.Location = new System.Drawing.Point(562, 613);
+            this.btnVer.Location = new System.Drawing.Point(565, 613);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(197, 59);
             this.btnVer.TabIndex = 12;
@@ -90,7 +128,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(547, 2);
+            this.label2.Location = new System.Drawing.Point(550, 2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(279, 46);
             this.label2.TabIndex = 11;
@@ -104,7 +142,7 @@
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEliminar.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_delete_48;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.Location = new System.Drawing.Point(815, 613);
+            this.btnEliminar.Location = new System.Drawing.Point(818, 613);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(171, 59);
             this.btnEliminar.TabIndex = 9;
@@ -121,7 +159,7 @@
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAgregar.Image = global::PROYECTO_FINAL_ARIAS_DANTE.Properties.Resources.icons8_buy_48;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.Location = new System.Drawing.Point(315, 613);
+            this.btnAgregar.Location = new System.Drawing.Point(318, 613);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(197, 59);
             this.btnAgregar.TabIndex = 7;
@@ -135,7 +173,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(1933, 0);
+            this.label1.Location = new System.Drawing.Point(1936, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(322, 46);
             this.label1.TabIndex = 2;
@@ -170,11 +208,11 @@
             this.PRECIO_BOLETO,
             this.TOTAL,
             this.FECHA});
-            this.dataGridVentas.Location = new System.Drawing.Point(3, 86);
+            this.dataGridVentas.Location = new System.Drawing.Point(3, 104);
             this.dataGridVentas.Name = "dataGridVentas";
             this.dataGridVentas.ReadOnly = true;
             this.dataGridVentas.RowTemplate.Height = 25;
-            this.dataGridVentas.Size = new System.Drawing.Size(1343, 505);
+            this.dataGridVentas.Size = new System.Drawing.Size(1348, 487);
             this.dataGridVentas.TabIndex = 1;
             // 
             // IDVENTA
@@ -245,10 +283,10 @@
             // 
             this.inpBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpBuscar.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.inpBuscar.Location = new System.Drawing.Point(1074, 42);
+            this.inpBuscar.Location = new System.Drawing.Point(927, 65);
             this.inpBuscar.Name = "inpBuscar";
             this.inpBuscar.PlaceholderText = "Buscar por ID....";
-            this.inpBuscar.Size = new System.Drawing.Size(269, 31);
+            this.inpBuscar.Size = new System.Drawing.Size(171, 31);
             this.inpBuscar.TabIndex = 3;
             this.inpBuscar.TextChanged += new System.EventHandler(this.inpBuscar_TextChanged);
             // 
@@ -290,5 +328,8 @@
         private DataGridViewTextBoxColumn TOTAL;
         private DataGridViewTextBoxColumn FECHA;
         private Button btnVer;
+        private Label label3;
+        private DateTimePicker dateTimePicker1;
+        private Button button1;
     }
 }

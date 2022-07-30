@@ -99,8 +99,8 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
                                         item.Factura,
                                         item.Nit,
                                         item.Boletos,
-                                        "Bs. " + item.PrecioBoleto,
-                                        "Bs. " + item.Total,
+                                        DataEmpresa.Moneda + " " + item.PrecioBoleto,
+                                        DataEmpresa.Moneda + " " + item.Total,
                                         item.Fecha);
             }
         }
@@ -121,6 +121,36 @@ namespace PROYECTO_FINAL_ARIAS_DANTE.Vistas.Ventas
                                        DataEmpresa.Moneda + " " + item.Total,
                                        item.Fecha);
             }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            var resultados = ListaVentas.getVentas().Where(x => Convert.ToDateTime(x.Fecha).ToShortDateString().ToString().Contains(dateTimePicker1.Value.ToShortDateString().ToString()));
+
+            dataGridVentas.Rows.Clear();
+
+            foreach (Venta item in resultados)
+            {
+                dataGridVentas.Rows.Add(item.IdVenta,
+                                        item.Pelicula,
+                                        item.Cliente,
+                                        item.Factura,
+                                        item.Nit,
+                                        item.Boletos,
+                                        DataEmpresa.Moneda + " " + item.PrecioBoleto,
+                                         DataEmpresa.Moneda + " " + item.Total,
+                                        item.Fecha);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listarVentas();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
